@@ -121,7 +121,7 @@ class Login(Resource):
 
         _email = req_data.get("email")
         _password = req_data.get("password")
-
+        print(_email, _password)
         user_exists = Users.get_by_email(_email)
 
         if not user_exists:
@@ -131,16 +131,16 @@ class Login(Resource):
         if not user_exists.check_password(_password):
             return {"success": False,
                     "msg": "Wrong credentials."}, 400
-
+        print("BEFORE TOKEN")
         # create access token uwing JWT
-        token = jwt.encode({'email': _email, 'exp': datetime.utcnow(
-        ) + timedelta(minutes=30)}, BaseConfig.SECRET_KEY)
+        token = jwt.encode({'email': _email,
+                            'exp': datetime.utcnow() + timedelta(minutes=30)}, BaseConfig.SECRET_KEY)
 
         user_exists.set_jwt_auth_active(True)
         user_exists.save()
 
         return {"success": True,
-                "token": token,
+                "token": token.decode('ascii'),
                 "user": user_exists.toJSON()}, 200
 
 
