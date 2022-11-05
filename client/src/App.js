@@ -6,7 +6,7 @@ import React from 'react';
 import Home from './components/pages/Home';
 import Discover from './components/pages/Discover';
 import AboutUs from './components/pages/AboutUs';
-import SignUp from './components/pages/SignUp';
+import Register from './components/auth/Register.js';
 import Login from './components/auth/Login.js';
 
 function App() {
@@ -18,8 +18,8 @@ function App() {
         <Route exact path='/' element={<Home/>}/> 
         <Route path='/discover' element={<Discover/>}/>
         <Route path='/about-us' element={<AboutUs/>}/>
-        <Route path='/sign-up' element={<SignUp/>}/>
-        <Route path='/Login' element={<Login/>}/>
+        <Route path='/register' element={<Register/>}/>
+        <Route path='/login' element={<Login/>}/>
       </Routes>
     </BrowserRouter>
     </>

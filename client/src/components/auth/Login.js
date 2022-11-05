@@ -64,10 +64,10 @@ const Login = () => {
     <h2 className="header-greating">Good to see you again</h2>
     {success ? ( 
       <section>
-        <h1>You are loggin in!</h1>
+        <h1>You are logged in!</h1>
           <br />
             <p>
-             <a href="#">Go to Home</a>
+             <a href="/">Go to Home</a>
             </p>
       </section>
       ):(

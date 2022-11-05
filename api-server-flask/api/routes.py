@@ -92,7 +92,7 @@ class Register(Resource):
         _username = req_data.get("username")
         _email = req_data.get("email")
         _password = req_data.get("password")
-
+        print(_username, _email, _password)
         user_exists = Users.get_by_email(_email)
         if user_exists:
             return {"success": False,
