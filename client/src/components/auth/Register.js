@@ -24,17 +24,15 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    console.log(JSON.stringify({username, email, password}));
     try {
       const response = await axios.post(REGISTER_URL,
-        JSON.stringify({username, email, password}),
+        JSON.stringify({username, password, email}),
         {
-          header: {'Content-Type': 'application/json'},
-          withCredentials: true
+          headers: {'Content-Type': 'application/json'},
+          withCredentials: false
         }
       );
-      console.log(JSON.stringify(response?.data));
-      console.log(JSON.stringify(response));
       setEmail('');
       setPassword('');
       setSuccess(true);

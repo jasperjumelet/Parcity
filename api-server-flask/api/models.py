@@ -47,6 +47,7 @@ class Users(db.Model):
 
     @classmethod
     def get_by_email(cls, email):
+        print("in here")
         return cls.query.filter_by(email=email).first()
 
     def toDICT(self):

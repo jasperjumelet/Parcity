@@ -89,10 +89,12 @@ class Register(Resource):
 
         req_data = request.get_json()
 
+        print(req_data)
+        print("above here ")
         _username = req_data.get("username")
         _email = req_data.get("email")
         _password = req_data.get("password")
-        print(_username, _email, _password)
+
         user_exists = Users.get_by_email(_email)
         if user_exists:
             return {"success": False,
@@ -122,7 +124,9 @@ class Login(Resource):
         _email = req_data.get("email")
         _password = req_data.get("password")
         print(_email, _password)
+        print(req_data)
         user_exists = Users.get_by_email(_email)
+        print(user_exists)
 
         if not user_exists:
             return {"success": False,
@@ -131,7 +135,6 @@ class Login(Resource):
         if not user_exists.check_password(_password):
             return {"success": False,
                     "msg": "Wrong credentials."}, 400
-        print("BEFORE TOKEN")
         # create access token uwing JWT
         token = jwt.encode({'email': _email,
                             'exp': datetime.utcnow() + timedelta(minutes=30)}, BaseConfig.SECRET_KEY)
