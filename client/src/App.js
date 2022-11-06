@@ -8,20 +8,29 @@ import Discover from './components/pages/Discover';
 import AboutUs from './components/pages/AboutUs';
 import Register from './components/auth/Register.js';
 import Login from './components/auth/Login.js';
+import Layout from './components/Layout';
 
 function App() {
   return (
     <>
-    <BrowserRouter>
+    {/* <BrowserRouter> */}
       <Navbar/>
       <Routes>
-        <Route exact path='/' element={<Home/>}/> 
-        <Route path='/discover' element={<Discover/>}/>
-        <Route path='/about-us' element={<AboutUs/>}/>
-        <Route path='/register' element={<Register/>}/>
-        <Route path='/login' element={<Login/>}/>
+        <Route path="/" element={<Layout />}>
+          {/* Public routes */}
+          <Route exact path='/' element={<Home/>}/> 
+          <Route path='/discover' element={<Discover/>}/>
+          <Route path='/about-us' element={<AboutUs/>}/>
+          <Route path='/register' element={<Register/>}/>
+          <Route path='/login' element={<Login/>}/>
+          
+          {/* Private routes (need to add content) */}
+          {/* <Route path='/admin' element={<Admin />}/> */}
+          {/* <Route path='/add-content' element={<AddContent />} */}
+        
+        </Route>
       </Routes>
-    </BrowserRouter>
+    {/* </BrowserRouter> */}
     </>
   );
 }
