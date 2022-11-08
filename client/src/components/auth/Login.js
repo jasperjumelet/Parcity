@@ -1,19 +1,25 @@
-import { useRef, useState, useEffect, useContext } from 'react';
-import AuthContext from "./AuthProvider";
+import { useRef, useState, useEffect } from 'react';
+import useAuth from '../../hooks/useAuth';
 import './Auth.css';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+
 import axios from '../../api/axios';
 const LOGIN_URL = '/api/users/login';
 
 
 const Login = () => {
-  const { setAuth } = useContext(AuthContext);
+  const { setAuth } = useAuth();
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
   const userRef = useRef();
   const errRef = useRef();
   
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errMsg, setErrMsg] = useState('');
-  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     userRef.current.focus();
@@ -43,7 +49,7 @@ const Login = () => {
       setAuth({ email, password, accessToken });
       setEmail('');
       setPassword('');
-      setSuccess(true); /*danger*/
+      navigate(from, { replace: true});
     } catch (err) {
       if (!err?.response) {
         setErrMsg('No Server Response');
@@ -63,16 +69,7 @@ const Login = () => {
     <>
     <body className="align">
     <h2 className="header-greating">Good to see you again</h2>
-    {success ? ( 
-      <section>
-        <h1>You are logged in!</h1>
-          <br />
-            <p>
-             <a href="/">Go to Home</a>
-            </p>
-      </section>
-      ):(
-    <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>)}
+        <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
       <div className="grid">
         <form className="form login" onSubmit={handleSubmit}>
           <div className="form__field">
