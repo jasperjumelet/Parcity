@@ -1,3 +1,4 @@
 https://github.com/martindavid/flask-react-docker-app
 https://blog.appseed.us/flask-react-full-stack-seed-projects/
 https://codepen.io/hurick/pen/Kyrvrj  # for login/signup styling
+https://www.bezkoder.com/react-jwt-auth/  # really good code for autentication process
