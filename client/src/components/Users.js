@@ -3,7 +3,7 @@ import axios from "../api/axios";
 import useRefreshToken from "../hooks/useRefreshToken";
 
 const Users = () => {
-  const [users, setUsers ] = useState();
+  const [users, setUsers] = useState();
   const refresh = useRefreshToken();
 
 
@@ -36,12 +36,11 @@ const Users = () => {
       <h2>Users List</h2>
       {users?.length
         ? (
-            <ul>
-              {users.map((user, i) => <li key={i}>{user?.username}</li>)}
-            </ul>
+          <ul>
+            {users.map((user, i) => <li key={i}>{user?.username}</li>)}
+          </ul>
         ) : <p>No Users to display</p>}
-        <button onClick={() => refresh()}>Refresh</button>
-        <br />
+      <button onClick={() => refresh()}>Refresh</button>
     </article>
   )
 };

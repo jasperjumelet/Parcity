@@ -13,8 +13,8 @@ const RequireAuth = () => {
 }
 
 
-      // USE THIS CODE FOR DIFFERENT ROLE PAGE AUTHENTICATION WRITE /unauthorized files and add roles to api
-      // minute 20+ this video https://www.youtube.com/watch?v=oUZjO00NkhY&list=PL0Zuz27SZ-6PRCpm9clX0WiBEMB70FWwd&index=3
+// USE THIS CODE FOR DIFFERENT ROLE PAGE AUTHENTICATION WRITE /unauthorized files and add roles to api
+// minute 20+ this video https://www.youtube.com/watch?v=oUZjO00NkhY&list=PL0Zuz27SZ-6PRCpm9clX0WiBEMB70FWwd&index=3
 // const RequireAuth = ({ allowedRoles }) => {
 //   const { auth } = useAuth();
 //   const location = useLocation();
