@@ -28,6 +28,9 @@ module.exports = {
         "primary": "#014871",
         "secondary": "#A0EBCF",
       },
+      backgroundImage: {
+        "skyline": "url('../public/images/city.png')",
+      },
     },
   },
   plugins: [],
