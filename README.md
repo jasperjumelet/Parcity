@@ -1,3 +1,5 @@
 ### Parcity webpage
 Property discovery site for investors
-![Front page](/general-assets/frontpage.png?raw=true "Front page")
+
+source photo is buypage of parcity:
+![Buy page](/general-assets/buypage.png?raw=true "Buy Page")
