@@ -1,10 +1,9 @@
-import React from "react";
 import "../index.css";
 
 const NavBar = () => {
   return (
     <>
-      <div className="items-center justify-center">
+      <div className="fixed w-full items-center justify-center">
         <div className="grid grid-cols-2">
           <div className="text-nav font-bold text-center p-10 ">
             <div className="flex items-center">
