@@ -12,6 +12,9 @@ import Login from './components/auth/Login.js';
 import Layout from './components/Layout';
 import RequireAuth from './components/RequireAuth';
 
+// extra custom
+import NewHome from './components/newhome/NewHome';
+
 function App() {
   return (
     <>
@@ -25,6 +28,7 @@ function App() {
           <Route path='/about-us' element={<AboutUs/>}/>
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
+          <Route path='/newhome' element={<NewHome/>}/>
           
           {/* Private routes (need to add content) */}
           <Route element={<RequireAuth />}>
