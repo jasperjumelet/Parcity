@@ -1,7 +1,6 @@
 
-import './App.css';
-import {BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar'
+import { Routes, Route } from 'react-router-dom';
+import NavBar from './components/NavBar.js'
 import React from 'react';
 import Home from './components/pages/Home';
 import Discover from './components/pages/Discover';
@@ -13,13 +12,11 @@ import Layout from './components/Layout';
 import RequireAuth from './components/RequireAuth';
 
 // extra custom
-import NewHome from './components/newhome/NewHome';
 
 function App() {
   return (
     <>
-    {/* <BrowserRouter> */}
-      <Navbar/>
+      {/* <NavBar/> */}
       <Routes>
         <Route path="/" element={<Layout />}>
           {/* Public routes */}
@@ -28,7 +25,6 @@ function App() {
           <Route path='/about-us' element={<AboutUs/>}/>
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<Login/>}/>
-          <Route path='/newhome' element={<NewHome/>}/>
           
           {/* Private routes (need to add content) */}
           <Route element={<RequireAuth />}>
@@ -38,7 +34,6 @@ function App() {
         
         </Route>
       </Routes>
-    {/* </BrowserRouter> */}
     </>
   );
 }

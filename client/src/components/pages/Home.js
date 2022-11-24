@@ -1,16 +1,16 @@
 import React from 'react';
-import '../../App.css';
-import HeroSection from '../HeroSection';
-import Cards from '../Cards';
-import Footer from '../Footer'
+import NavBar from '../NavBar';
 
-function Home () {
+const Home = () => {
   return (
-    <>
-      <HeroSection />
-      <Cards />
-      <Footer />
-    </>
+    <main>
+      <section className="bg-gradient-to-b from-primary to-secondary/70 min-h-screen">
+        <NavBar/>
+      </section>
+      <section className="bg-white min-h-screen">
+        <p>test text</p>
+      </section>
+    </main>
   )
 }
 

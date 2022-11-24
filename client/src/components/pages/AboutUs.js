@@ -1,6 +1,5 @@
 import React from 'react';
-import '../../App.css';
 
 export default function AboutUs() {
-  return <h1 className='about-us'>About us</h1>
+  return <h1>About us</h1>
 }
