@@ -3,7 +3,7 @@ import "../index.css";
 const NavBar = () => {
   return (
     <>
-      <div className="fixed w-full items-center justify-center">
+      <div className="fixed z-50 w-full items-center justify-center bg-gray-800">
         <div className="grid grid-cols-2">
           <div className="text-nav font-bold text-center p-10 ">
             <div className="flex items-center">
@@ -31,9 +31,9 @@ const NavBar = () => {
                     <button
                       id="dropdownNavbarLink"
                       data-dropdown-toggle="dropdownNavbar"
-                      className="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                      className="flex items-center justify-between w-full py-2 px-4 pl-3 ml-8 pr-4 text-gray-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                     >
-                      Dropdown{" "}
+                      OPTIONS{" "}
                       <svg
                         className="w-5 h-5 ml-1"
                         aria-hidden="true"
