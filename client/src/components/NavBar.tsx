@@ -3,7 +3,7 @@ import "../index.css";
 const NavBar = () => {
   return (
     <>
-      <div className="fixed z-50 w-full items-center justify-center bg-gray-800">
+      <div className="fixed z-50 w-full items-center justify-center">
         <div className="grid grid-cols-2">
           <div className="text-nav font-bold text-center p-10 ">
             <div className="flex items-center">
@@ -20,10 +20,10 @@ const NavBar = () => {
               >
                 <ul className="flex">
                   <li>
-                    <a href="#" className="text-gray-400 mx-8 py-5">BUY</a>
+                    <a href="#" className="font-jetbrains-mono font-[1100] text-xl text-gray-400 mx-8 py-5">BUY</a>
                   </li>
                   <li>
-                    <a href="#" className="text-gray-400 mx-8 py-5">SELL</a>
+                    <a href="#" className="font-jetbrains-mono font-[1100] text-xl text-gray-400 mx-8 py-5">SELL</a>
                   </li>
                   <li>
                     {/* <a href="#" className="text-gray-400 mx-8 py-5">OPTIONS</a>  */}
@@ -31,7 +31,7 @@ const NavBar = () => {
                     <button
                       id="dropdownNavbarLink"
                       data-dropdown-toggle="dropdownNavbar"
-                      className="flex items-center justify-between w-full py-2 px-4 pl-3 ml-8 pr-4 text-gray-600 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+                      className="flex items-center justify-between w-full py-2 px-4 pl-3 ml-8 pr-4 font-jetbrains-mono font-[1100] text-xl text-gray-400 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-gray-400 dark:hover:text-white dark:focus:text-white dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
                     >
                       OPTIONS{" "}
                       <svg
@@ -137,10 +137,10 @@ const NavBar = () => {
               >
                 <ul className="flex">
                   <li>
-                    <a href="#" className="text-gray-400 mx-8 py-5">LOGIN</a>
+                    <a href="#" className="font-jetbrains-mono font-[1100] text-xl text-gray-400 mx-8 py-5">LOGIN</a>
                   </li>
                   <li>
-                    <a href="#" className="text-gray-400 mx-8 py-5">SIGN UP</a>
+                    <a href="#" className="font-jetbrains-mono font-[1100] text-xl text-gray-400 mx-8 py-5">SIGN UP</a>
                   </li>
                 </ul>
               </div>

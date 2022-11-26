@@ -31,6 +31,9 @@ module.exports = {
       backgroundImage: {
         "skyline": "url('../public/images/city.png')",
       },
+      fontFamily: {
+        'jetbrains-mono': ['"JetBrains Mono"', 'sans-serif']
+      }
     },
   },
   plugins: [],
