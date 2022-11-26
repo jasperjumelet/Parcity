@@ -12,6 +12,10 @@ const Home = () => {
             alt="city-skyline"
           />
         </div>
+        <div className="relative flex h-screen items-center text-center justify-center">
+          <h1 className="font-jetbrains-mono font-[300] text-4xl text-white mx-10">Invest in properties
+            with insights and flexibility</h1>
+        </div>
       </div>
       <section className="bg-white min-h-screen">
         <p>test text</p>
