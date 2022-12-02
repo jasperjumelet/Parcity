@@ -1,6 +1,21 @@
 import "../index.css";
+import { useState, useEffect } from 'react';
 
 const NavBar = () => {
+
+  const [posY0, setPosY0] = useState(true);
+
+  useEffect(() => {
+    window.onscroll = () => {
+      if (window.pageYOffset === 0) {
+        setPosY0(true);
+      }
+      else {
+        setPosY0(false);
+      }
+    }
+  })
+
   return (
     <>
       <div className="fixed z-50 w-full items-center justify-center">
