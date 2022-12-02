@@ -1,4 +1,5 @@
 import NavBar from "../NavBar";
+import Card from "../Card";
 import { useRef } from 'react';
 
 
@@ -31,8 +32,10 @@ const Home = () => {
         </div>
 
       </div>
-      <section ref={section2Ref} className="bg-white min-h-screen">
-        <p>test text</p>
+      <section ref={section2Ref} className="bg-gray-200 min-h-screen">
+        <div className="flex p-10 justify-center">
+          <Card />
+        </div>
       </section>
     </main>
   );
