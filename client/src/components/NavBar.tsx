@@ -18,14 +18,14 @@ const NavBar = () => {
 
   return (
     <>
-      <div className="fixed z-50 w-full items-center justify-center">
+      <div className={`fixed z-50 w-full items-center justify-center ${posY0 === false ? 'bg-primary/90' : ''}`}>
         <div className="grid grid-cols-2">
-          <div className="text-nav font-bold text-center p-10 ">
+          <div className="text-nav font-bold text-center p-7 ">
             <div className="flex items-center">
               <a href="#" className="flex items-center">
                 <img
                   src="/images/parcity3.svg"
-                  className="h-6 mr-6 sm:h-12"
+                  className="h-5 mr-5 sm:h-10"
                   alt="Parcity Logo"
                 />
               </a>
@@ -35,10 +35,10 @@ const NavBar = () => {
               >
                 <ul className="flex">
                   <li>
-                    <a href="#" className="font-jetbrains-mono font-[1100] text-xl text-gray-400 mx-8 py-5">BUY</a>
+                    <a href="#" className="font-jetbrains-mono font-[1100] text-xl text-gray-400 mx-8 py-6">BUY</a>
                   </li>
                   <li>
-                    <a href="#" className="font-jetbrains-mono font-[1100] text-xl text-gray-400 mx-8 py-5">SELL</a>
+                    <a href="#" className="font-jetbrains-mono font-[1100] text-xl text-gray-400 mx-8 py-6">SELL</a>
                   </li>
                   <li>
                     {/* <a href="#" className="text-gray-400 mx-8 py-5">OPTIONS</a>  */}
@@ -114,7 +114,7 @@ const NavBar = () => {
               </div>
             </div>
           </div>
-          <div className="text-nav font-bold text-center p-10">
+          <div className="text-nav font-bold text-center p-7">
             <button
               data-collapse-toggle="navbar-dropdown"
               type="button"
@@ -142,7 +142,7 @@ const NavBar = () => {
               <div className="flex items-center">
                 <img
                   src="/parcity3.svg"
-                  className="h-6 mr-3 sm:h-12 opacity-0"
+                  className="h-5 mr-5 sm:h-10 opacity-0"
                   alt="Parcity Logo"
                 />
               </div>
