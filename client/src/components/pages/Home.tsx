@@ -1,6 +1,8 @@
 import NavBar from "../NavBar";
+import Footer from "../Footer";
 import Card from "../Card";
 import { useRef } from 'react';
+import { Link } from "react-router-dom";
 
 
 const Home = () => {
@@ -32,16 +34,23 @@ const Home = () => {
         </div>
 
       </div>
-      <section ref={section2Ref} className="bg-gray-200 min-h-screen">
+      <section ref={section2Ref} className="bg-gray-200">
         <div className="flex pt-16 gap-8 justify-center">
           <Card />
+          <div className="flex inline-flex hidden nav:block">
+            <Card />
+          </div>
+          <div className="flex inline-flex hidden nav:block">
+            <Card />
+          </div>
         </div>
         <div className="flex flex-col mt-10 justify-center items-center">
           <h3 className="font-jetbrains-mono font-[700] text-3xl text-gray-800">Recommended Properties</h3>
           <h2 className="font-jetbrains-mono font-[400] text-md text-gray-600">Buy and Sell your properties and find new investments</h2>
-          <button className="border px-5 mt-2 border-[#015E8B] hover:bg-[#015E8B] hover:text-gray-100 font-jetbrains-mono font-[400] text-xl text-[#015E8B] rounded">Learn more</button>
+          <button className="border px-5 mt-2 mb-12 border-[#015E8B] hover:bg-[#015E8B] hover:text-gray-100 font-jetbrains-mono font-[400] text-xl text-[#015E8B] rounded"><Link to="/buy">Learn more</Link></button>
         </div>
       </section>
+      <Footer />
     </main>
   );
 };

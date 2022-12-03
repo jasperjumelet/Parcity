@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "../Footer"
 import NavBar from "../NavBar"
 import Card from "../Card";
 
@@ -12,7 +13,7 @@ const Buy = () => {
         </div>
 
         <div className="flex justify-center ">
-          <div className="grid items-center gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="grid items-center gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mb-12">
             <Card />
             <Card />
             <Card />
@@ -25,6 +26,7 @@ const Buy = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </main >
   )
 }
