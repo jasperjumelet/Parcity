@@ -1,4 +1,6 @@
 import "../index.css";
+import { Link } from "react-router-dom";
+
 import { useState, useEffect } from 'react';
 
 const NavBar = () => {
@@ -18,16 +20,18 @@ const NavBar = () => {
 
   return (
     <>
-      <div className={`fixed z-50 w-full items-center justify-center ${posY0 === false ? 'bg-primary/90' : ''}`}>
+      <div className={`fixed overflow-hidden z-50 w-full items-center justify-center ${posY0 === false ? 'bg-primary/90' : ''}`}>
         <div className="grid grid-cols-2">
           <div className="text-nav font-bold text-center p-7 ">
             <div className="flex items-center">
-              <a href="#" className="flex items-center">
-                <img
-                  src="/images/parcity3.svg"
-                  className="h-5 mr-5 sm:h-10"
-                  alt="Parcity Logo"
-                />
+              <a href="" className="flex items-center">
+                <Link to="/">
+                  <img
+                    src="/images/parcity3.svg"
+                    className="h-5 mr-5 sm:h-10"
+                    alt="Parcity Logo"
+                  />
+                </Link>
               </a>
               <div
                 className="hidden w-full nav:block nav:w-auto"
@@ -35,7 +39,7 @@ const NavBar = () => {
               >
                 <ul className="flex">
                   <li>
-                    <a href="#" className="font-jetbrains-mono font-[1100] text-xl text-gray-400 mx-8 py-6">BUY</a>
+                    <a href="" className="font-jetbrains-mono font-[1100] text-xl text-gray-400 mx-8 py-6"><Link to="/buy">BUY</Link></a>
                   </li>
                   <li>
                     <a href="#" className="font-jetbrains-mono font-[1100] text-xl text-gray-400 mx-8 py-6">SELL</a>
@@ -168,3 +172,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
+
