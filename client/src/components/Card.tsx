@@ -57,7 +57,7 @@ const Card = () => {
         <div className="flex flex-row justify-around">
           <h2 className="font-jetbrains-mono font-[600] text-[10px] text-gray-400">Yield</h2>
           <h2 className="font-jetbrains-mono font-[600] text-[10px] text-gray-400">Cap Rate</h2>
-          <h2 className="font-jetbrains-mono font-[600] text-[10px] text-gray-400">Neighbourhood</h2>
+          <h2 className="font-jetbrains-mono font-[600] text-[10px] text-gray-400">Quality Rating</h2>
 
         </div>
       </div>

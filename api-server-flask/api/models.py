@@ -13,6 +13,7 @@ class Users(db.Model):
     username = db.Column(db.String(32), nullable=False)
     email = db.Column(db.String(64), nullable=False)
     password = db.Column(db.Text())
+    pf_picture = db.Column(db.LargeBinary)
     jwt_auth_active = db.Column(db.Boolean())
     date_joined = db.Column(db.DateTime(), default=datetime.utcnow)
 
@@ -35,6 +36,9 @@ class Users(db.Model):
     def update_username(self, new_username):
         self.username = new_username
 
+    def update_pf_picture(self, new_pf_picture):
+        self.pf_picture = new_pf_picture
+
     def check_jwt_auth_active(self):
         return self.jwt_auth_active
 
@@ -47,7 +51,6 @@ class Users(db.Model):
 
     @classmethod
     def get_by_email(cls, email):
-        print("in here")
         return cls.query.filter_by(email=email).first()
 
     def toDICT(self):
@@ -60,6 +63,19 @@ class Users(db.Model):
 
     def toJSON(self):
         return self.toDICT()
+
+class Houses(db.Model):
+    id = db.Column(db.Integer(), primary_key=True)
+    location = db.Column(db.String(128), nullable=False)
+    email = db.Column(db.String(64), nullable=False)
+    property_img = db.Column(db.LargeBinary)
+    price = db.Column(db.Integer())
+    annual_yield = db.Column(db.Float())
+    cap_rate = db.Column(db.Float())
+    description = db.Column(db.Text())   
+    post_date = db.Column(db.DateTime(), default=datetime.utcnow)
+
+    # add get and set methods 
 
 
 class JWTTokenBlocklist(db.Model):
