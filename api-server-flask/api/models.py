@@ -75,8 +75,34 @@ class Houses(db.Model):
     description = db.Column(db.Text())   
     post_date = db.Column(db.DateTime(), default=datetime.utcnow)
 
-    # add get and set methods 
+    def save(self):
+        db.session.add(self)
+        db.session.commit()
 
+    def update_location(self, new_location):
+        self.location = new_location
+
+    def update_email(self, new_email):
+        self.email = new_email
+
+    def update_property_img(self, new_property_img):
+        self.property_img = new_property_img
+
+    def update_price(self, new_price):
+        self.price = new_price
+
+    def update_annual_yield(self, new_annual_yield):
+        self.annual_yield = new_annual_yield
+
+    def update_cap_rate(self, new_cap_rate):
+        self.cap_rate = new_cap_rate
+
+    def update_description(self, new_description):
+        self.description = new_description
+
+
+
+        
 
 class JWTTokenBlocklist(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
