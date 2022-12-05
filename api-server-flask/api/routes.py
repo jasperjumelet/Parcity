@@ -7,7 +7,7 @@ from flask_restx import Api, Resource, fields
 
 import jwt
 
-from .models import db, Users, JWTTokenBlocklist
+from .models import db, Users, Houses, JWTTokenBlocklist
 from .config import BaseConfig
 
 rest_api = Api(version="1.0", title="Users API")
@@ -30,6 +30,14 @@ user_edit_model = rest_api.model('UserEditModel', {"userID": fields.String(requi
                                                    "email": fields.String(required=True, min_length=4, max_length=64)
                                                    })
 
+add_property_model = rest_api.model('AddPropertyModel', {"location": fields.String(required=True, min_length=5, max_length=128),
+                                                         "email": fields.String(required=True, min_length=3, max_length=128),
+                                                         # maybe need to add property image handler here or in another location
+                                                         "price": fields.String(required=False, min_=0, max_length = 16),
+                                                         "annual_yield": fields.String(required=False, min=0, max_length=16),
+                                                         "cap_rate": fields.String(required=False, min=0, max_length=16),
+                                                         "description": fields.String(required=False, min=0, max_length=1000)
+                                                         })
 """
     Helper function for JWT token required
 """
@@ -44,7 +52,7 @@ def token_required(f):
 
         if "authorization" in request.headers:
             token = request.headers["authorization"]
-
+ 
         if not token:
             return {"success": False, "msg": "Valid JWT token is missing"}, 400
 
@@ -183,7 +191,6 @@ class LogoutUser(Resource):
     def post(self, current_user):
 
         _jwt_token = request.header["authorization"]
-
         jwt_block = JWTTokenBlocklist(
             jwt_token=_jwt_token, created_at=datetime.now(timezone.utc))
         jwt_block.save()
@@ -192,3 +199,35 @@ class LogoutUser(Resource):
         self.save()
 
         return {"success": True}, 200
+
+
+@rest_api.route('/api/properties/add')
+class AddProperty(Resource):
+    @rest_api.expect(add_property_model, validate=True)
+    def post(self):
+        req_data = request.get_json()
+        _location = req_data.get("location")
+        _email = req_data.get("email")
+        # _property_img = req_data.get("property_img")
+        _price = req_data.get("price")
+        _annual_yield = req_data.get("annual_yield")
+        _cap_rate = req_data.get("cap_rate")
+        _description = req_data.get("description")
+
+        loc_exists = Users.get_by_location(_location)
+
+        if loc_exists:
+            return {"success": False,
+                    "msg": "There is already a property registered on this address"}, 400
+        
+        new_property = Houses(location=_location, email=_email, price=_price,
+                              annual_yield=_annual_yield, cap_rate=_cap_rate,
+                              description=_description)
+        new_property.save()
+
+        return {"success": True,
+                "msg": "New property added successfully!"}, 200
+
+        
+
+
