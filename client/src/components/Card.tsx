@@ -1,9 +1,8 @@
 const Card = () => {
   return (
-    <div className="w-72 h-96 bg-white border border-gray-400 rounded-lg shadow-lg shadow-gray-900">
-      <a href="#">
-        <img className="rounded-t-lg" src={"/images/images.jpeg"} alt="house" />
-      </a>
+    <div className="w-72 h-96 bg-white border border-gray-400 rounded-lg shadow-lg shadow-gray-900"> <a href="#">
+      <img className="rounded-t-lg" src={"/images/images.jpeg"} alt="house" />
+    </a>
       <div className="p-3">
         <h5 className="mb-1 font-jetbrains-mono font-[800] text-xl text-gray-700">€1.200.000</h5>
         <h3 className="font-jetbrains-mono font-[300] text-sm text-gray-600">Bed rooms: 4, Bath rooms: 3</h3>

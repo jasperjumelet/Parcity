@@ -5,7 +5,8 @@ import React from 'react';
 import Home from './components/pages/Home';
 import Buy from './components/pages/Buy';
 import AboutUs from './components/pages/AboutUs';
-import Admin from './components/pages/Admin';
+import Admin from './components/AdminPages/Admin';
+import AddProperties from './components/AdminPages/AddProperties';
 import Register from './components/auth/Register.js';
 import Login from './components/auth/Login.js';
 import Layout from './components/Layout';
@@ -27,6 +28,7 @@ function App() {
           <Route path='/login' element={<Login />} />
 
           {/* Private routes (need to add content) */}
+          <Route path='/add' element={<AddProperties />} />
           <Route element={<RequireAuth />}>
             <Route path='/admin' element={<Admin />} />
           </Route>
