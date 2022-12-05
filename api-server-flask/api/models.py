@@ -100,6 +100,9 @@ class Houses(db.Model):
     def update_description(self, new_description):
         self.description = new_description
 
+    @classmethod
+    def get_by_location(cls, location):
+        return cls.query.filter_by(location=location).first()
 
 
         
