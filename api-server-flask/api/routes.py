@@ -214,7 +214,7 @@ class AddProperty(Resource):
         _cap_rate = req_data.get("cap_rate")
         _description = req_data.get("description")
 
-        loc_exists = Users.get_by_location(_location)
+        loc_exists = Houses.get_by_location(_location)
 
         if loc_exists:
             return {"success": False,

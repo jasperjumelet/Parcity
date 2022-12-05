@@ -19,19 +19,19 @@ const AddProperties = () => {
 
   const [errMsg, setErrMsg] = useState('');
 
-  const locRef = useRef()
-  const errRef = useRef()
+  const locRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+  const errRef = useRef() as React.MutableRefObject<HTMLInputElement>;
 
-
-  useEffect(() => {
-    locRef.current.focus();
-  })
+  //
+  // useEffect(() => {
+  //   locRef.current.focus();
+  // })
 
   useEffect(() => {
     setErrMsg('');
   }, [location])
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
     try {
@@ -67,7 +67,18 @@ const AddProperties = () => {
 
   return (
     <div>
-      <p>test</p>
+      <h2 className="m-3">welcome to add post</h2>
+      <p ref={errRef} className={errMsg ? "text-red-700" : "text-green-700"} aria-live="assertive">{errMsg}</p>
+      <form onSubmit={handleSubmit}>
+        <input type="text" id="location" ref={locRef} className="m-3 border border-blue-800" placeholder="location" autoComplete="off" onChange={(e: any) => setLocation(e.target.value)} value={location} required />
+        <input type="text" id="email" className="m-3 border border-blue-800" placeholder="email" autoComplete="off" onChange={(e: any) => setEmail(e.target.value)} value={email} required />
+        <input type="text" id="price" className="m-3 border border-blue-800" placeholder="price" autoComplete="off" onChange={(e: any) => setPrice(e.target.value)} value={price} required />
+        <input type="text" id="annual_yield" className="m-3 border border-blue-800" placeholder="annual yield" autoComplete="off" onChange={(e: any) => setAnnual_yield(e.target.value)} value={annual_yield} required />
+        <input type="text" id="cap_rate" className="m-3 border border-blue-800" placeholder="cap rate" autoComplete="off" onChange={(e: any) => setCap_rate(e.target.value)} value={cap_rate} required />
+        <input type="text" id="description" className="m-3 border border-blue-800" placeholder="description" autoComplete="off" onChange={(e: any) => setDescription(e.target.value)} value={description} required />
+        <input type="submit" value="Add property" />
+      </form>
+
     </div>
   )
 }
