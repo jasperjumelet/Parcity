@@ -1,11 +1,10 @@
-FROM node:16.3.0-alpine
+FROM node:16-alpine
 
 # set working directory inside container
 WORKDIR /app
 
 # copy app files
 COPY . .
-
 # Install dependencies
 RUN npm ci
 

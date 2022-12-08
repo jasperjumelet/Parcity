@@ -20,20 +20,32 @@ services:
   #     MYSQL_ROOT_PASSWORD: MYSQL_ROOT_PASSWORD
   #     MYSQL_HOST: localhost
   nginx:
+    image: nginx
     depends_on:
       - client
-    restart: always
     build:
       dockerfile: Dockerfile
       context: ./nginx
+    volumes:
+      - client:/usr/share/nginx/html
     ports:
-      - "3050:80"
+      - "80:80"
+      - "443:443"
+    links:
+      - "client"
 
   client:
-    stdin_open: true
-    build:
-      dockerfile: Dockerfile
-      context: ./client
+    build: ./client
+      # dockerfile: Dockerfile
+      # context: ./client
     volumes:
-      - /app/node_modules
-      - ./client:/app
+      - client/:/usr/share/nginx/html    
+    
+
+
+      # - /app/node_modules
+      # - ./client:/app
+      #
+      #
+volumes:
+  client:
