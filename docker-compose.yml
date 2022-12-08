@@ -39,7 +39,10 @@ services:
       # dockerfile: Dockerfile
       # context: ./client
     volumes:
-      - client/:/usr/share/nginx/html    
+      - client/:/usr/share/nginx/html
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+      - WATCHPACK_POLLING=true
     
 
 
