@@ -14,10 +14,16 @@ services:
       - FLASK_ENV=development
       - FLASK_DEBUG=1
 
+      # change sqlalchemy string to postgres service 
+      - SQLALCHEMY_DATABASE_URI='sqlite:///home/jappie/parcity/api-server-flask/api/apidata.db'
+      - SECRET_KEY="flask-app-secret-key"
+      - JWT_SECRET_KEY="jwt-app-secret-key"
+
+
   client:
     depends_on:
       - flask_api
-    build:
+    build: 
       context: ./client
       dockerfile: Dockerfile.dev
     ports:
@@ -28,4 +34,16 @@ services:
 
     environment:
       - WATCHPACK_POLLING=true
-
+  
+  db:
+    environment:
+      POSTGRES_USER: test
+      POSTGRES_PASSWORD: test
+      POSTGRES_DB: test
+    image: postgres:latest
+    networks:
+      - default
+    ports:
+      - 5405:5432
+    volumes:
+      - ./postgres-data:/var/lib/postgresql/data
