@@ -1,6 +1,22 @@
 version: "3.3"
 services:
+  flask_api:
+    build:
+      context: ./api-server-flask
+      dockerfile: Dockerfile.dev
+    expose:
+      - 5000
+    ports:
+      - 5000:5000
+    volumes:
+      - ./api-server-flask:/usr/src/app
+    environment:
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
+
   client:
+    depends_on:
+      - flask_api
     build:
       context: ./client
       dockerfile: Dockerfile.dev
@@ -12,3 +28,4 @@ services:
 
     environment:
       - WATCHPACK_POLLING=true
+
