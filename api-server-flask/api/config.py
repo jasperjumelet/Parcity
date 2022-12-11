@@ -23,6 +23,6 @@ class BaseConfig():
     SECRET_KEY = os.environ['SECRET_KEY'] 
 
     # needs if statement that checks if the environ is prod or dev to make easy secret key for simple development
-    JWT_SECRET_KEY = os.environ
+    JWT_SECRET_KEY = os.environ['JWT_SECRET_KEY']
 
     JWT_ACCESS_TOKEN_EXPIRES = timedelta(hours=1)

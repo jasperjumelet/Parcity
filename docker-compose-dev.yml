@@ -15,7 +15,7 @@ services:
       - FLASK_DEBUG=1
 
       # change sqlalchemy string to postgres service 
-      - SQLALCHEMY_DATABASE_URI='sqlite:///home/jappie/parcity/api-server-flask/api/apidata.db'
+      - DATABASE_URL=sqlite:///app/api/apidata.db
       - SECRET_KEY="flask-app-secret-key"
       - JWT_SECRET_KEY="jwt-app-secret-key"
 
