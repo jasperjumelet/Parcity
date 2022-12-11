@@ -15,10 +15,12 @@ services:
       - FLASK_DEBUG=1
 
       # change sqlalchemy string to postgres service 
-      - DATABASE_URL=sqlite:///app/api/apidata.db
+      # - DATABASE_URL=sqlite:///app/api/apidata.db
+      - DATABASE_URL=postgresql://test:test@db:5432/test
       - SECRET_KEY="flask-app-secret-key"
       - JWT_SECRET_KEY="jwt-app-secret-key"
-
+    depends_on:
+      - db
 
   client:
     depends_on:
@@ -40,7 +42,7 @@ services:
       POSTGRES_USER: test
       POSTGRES_PASSWORD: test
       POSTGRES_DB: test
-    image: postgres:latest
+    image: postgres:alpine
     networks:
       - default
     ports:
