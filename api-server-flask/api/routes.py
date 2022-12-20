@@ -181,6 +181,20 @@ class EditUser(Resource):
         return {"success": True}, 200
 
 
+#might need fix
+@rest_api.route('/api/users/getall')
+class GetAllUsers(Resource):
+    """
+    GetAllUsers
+    """
+    # @token_required
+    def get(self):
+        users = Users.query.all()
+        print(users)
+
+        return {"success": True,
+                "users": users.toJSON()}, 200
+
 @rest_api.route('/api/users/logout')
 class LogoutUser(Resource):
     """
