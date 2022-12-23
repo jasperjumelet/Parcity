@@ -6,12 +6,15 @@ import { AxiosError, AxiosResponse } from 'axios';
 const GET_DB_URL = '/api/users/getall'
 
 const UserManager = () => {
-  const [users, setUsers] = useState<AxiosResponse | null>()
+  const [users, setUsers] = useState<AxiosResponse | null>(null)
 
   useEffect(() => {
     axios.get(GET_DB_URL)
       .then((response) => {
-        setUsers(response)
+        console.log(response.data)
+      })
+      .catch(error => {
+        console.log(error)
       })
   }, [])
 
@@ -22,4 +25,4 @@ const UserManager = () => {
   )
 }
 
-
+export default UserManager

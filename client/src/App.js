@@ -6,6 +6,7 @@ import Home from './components/pages/Home';
 import Buy from './components/pages/Buy';
 import AboutUs from './components/pages/AboutUs';
 import Admin from './components/AdminPages/Admin.tsx';
+import UserManager from './components/AdminPages/UserManager.tsx';
 import AddProperties from './components/AdminPages/AddProperties';
 import Register from './components/auth/Register.js';
 import Login from './components/auth/Login.js';
@@ -27,6 +28,7 @@ function App() {
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
           <Route path='/admin' element={<Admin />} />
+          <Route path='/usermanager' element={<UserManager />} />
 
           {/* Private routes (need to add content) */}
           <Route path='/add' element={<AddProperties />} />

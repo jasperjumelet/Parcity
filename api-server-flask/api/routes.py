@@ -3,6 +3,7 @@ from datetime import datetime, timezone, timedelta
 from functools import wraps
 
 from flask import request
+from flask_cors import cross_origin
 from flask_restx import Api, Resource, fields
 
 import jwt
@@ -216,6 +217,7 @@ class LogoutUser(Resource):
 
 
 @rest_api.route('/api/properties/add')
+# @cross_origin()
 class AddProperty(Resource):
     @rest_api.expect(add_property_model, validate=True)
     def post(self):
