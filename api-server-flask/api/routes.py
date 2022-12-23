@@ -194,7 +194,7 @@ class GetAllUsers(Resource):
         print(users)
 
         return {"success": True,
-                "users": users.toJSON()}, 200
+                "users": str(users)}, 200
 
 @rest_api.route('/api/users/logout')
 class LogoutUser(Resource):
