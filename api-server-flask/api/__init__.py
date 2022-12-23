@@ -5,6 +5,9 @@ from flask_cors import CORS
 
 from .routes import rest_api
 from .models import db
+from .logger import logger
+
+logger.info("started api")
 
 app = Flask(__name__)
 

@@ -17,3 +17,4 @@ simplejson==3.16.0
 SQLAlchemy==1.4.42
 Werkzeug==2.2.2
 websocket-client==0.53.0
+python-dotenv
