@@ -8,7 +8,7 @@ env_file = find_dotenv()
 load_dotenv()
 
 CONFIG_DIR = "../config"
-LOG_DIR = "../logs"
+LOG_DIR = "logs"
 
 def setup_logging():
     """Load logging configuration"""
@@ -18,14 +18,13 @@ def setup_logging():
     config_path = "config/logging.dev.ini"
     print(os.getcwd())
     print(config_path)
-    timestamp = datetime.now().strftime("%Y%m%d-%H:%M:%S")
+    timestamp = datetime.now().strftime("%Y:%m:%d-%H:%M:%S")
 
     logging.config.fileConfig(
             config_path,
             disable_existing_loggers=False,
-            defaults={"logfilename": "test.log"}
-            ,)
-            # defaults={"logfilename": f"{LOG_DIR}/{timestamp}.log"},)            
+            # defaults={"logfilename": "test.log"}
+            defaults={"logfilename": f"{LOG_DIR}/{timestamp}.log"},)            
             
 
 setup_logging()
