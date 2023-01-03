@@ -9,7 +9,7 @@ services:
     ports:
       - 5000:5000
     volumes:
-      - ./api-server-flask:/usr/src/app
+      - ./api-server-flask:/app
     environment:
       - FLASK_ENV=development
       - FLASK_DEBUG=1

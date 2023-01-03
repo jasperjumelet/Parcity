@@ -1,4 +1,1 @@
-1. update all scripts to be tsx compatible
-2. place homebg on bottom of div
-3. install redux for jwt and authentication
-4. continue with design and front-end development
+make logger production ready in the logger file in api

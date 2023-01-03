@@ -11,6 +11,7 @@ CONFIG_DIR = "../config"
 LOG_DIR = "logs"
 
 def setup_logging():
+    # make production ready
     """Load logging configuration"""
     log_configs = {"development": "logging.dev.ini", "prod": "logging.prod.ini"}
     config = log_configs.get(os.environ["FLASK_ENV"], "logging.dev.ini")
