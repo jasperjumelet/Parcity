@@ -191,10 +191,12 @@ class GetAllUsers(Resource):
     # @token_required
     def get(self):
         users = Users.query.all()
-        print(users)
+        userdict = {}
+        for user in users:
+            userdict[user.id] = [user.username, user.email]
 
         return {"success": True,
-                "users": str(users)}, 200
+                "users": str(userdict)}, 200
 
 @rest_api.route('/api/users/logout')
 class LogoutUser(Resource):
