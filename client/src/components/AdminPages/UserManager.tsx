@@ -20,7 +20,19 @@ const UserManager = () => {
 
   return (
     <>
-      <NavBar />
+      <div className="bg-gradient-to-b from-primary to-secondary/70 min-h-screen">
+
+        <NavBar />
+        <div className="p-12"></div>
+        <div className="flex flex-col justify-center">
+          <div className="h-16 border-1 border-black bg-gray-100 mx-10 rounded-xl flex flex-row">
+
+            <p className="font-jetbrains-mono font-[500] text-md text-black text-center pt-5 pl-5">jasper</p>
+          </div>
+        </div>
+
+
+      </div>
     </>
   )
 }
