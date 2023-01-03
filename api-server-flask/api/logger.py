@@ -15,13 +15,17 @@ def setup_logging():
     log_configs = {"development": "logging.dev.ini", "prod": "logging.prod.ini"}
     config = log_configs.get(os.environ["FLASK_ENV"], "logging.dev.ini")
     config_path = "/".join([CONFIG_DIR, config])
-
+    config_path = "config/logging.dev.ini"
+    print(os.getcwd())
+    print(config_path)
     timestamp = datetime.now().strftime("%Y%m%d-%H:%M:%S")
 
     logging.config.fileConfig(
             config_path,
             disable_existing_loggers=False,
-            defaults={"logfilename": f"{LOG_DIR}/{timestamp}.log"},)            
+            defaults={"logfilename": "test.log"}
+            ,)
+            # defaults={"logfilename": f"{LOG_DIR}/{timestamp}.log"},)            
             
 
 setup_logging()
