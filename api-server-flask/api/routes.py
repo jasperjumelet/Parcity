@@ -1,7 +1,7 @@
 from datetime import datetime, timezone, timedelta
 
 from functools import wraps
-
+import json
 from flask import request
 from flask_cors import cross_origin
 from flask_restx import Api, Resource, fields
@@ -191,12 +191,14 @@ class GetAllUsers(Resource):
     # @token_required
     def get(self):
         users = Users.query.all()
-        userdict = {}
-        for user in users:
-            userdict[user.id] = [user.username, user.email]
+        # userdict = {}
+        # for user in users:
+        #     userdict[user.id] = [user.username, user.email]
+        users_json = json.dumps([u.__dict__ for u in users])
+
 
         return {"success": True,
-                "users": str(userdict)}, 200
+                "users": users_json}, 200
 
 @rest_api.route('/api/users/logout')
 class LogoutUser(Resource):
