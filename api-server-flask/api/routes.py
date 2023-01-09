@@ -194,7 +194,8 @@ class GetAllUsers(Resource):
         # userdict = {}
         # for user in users:
         #     userdict[user.id] = [user.username, user.email]
-        users_json = json.dumps([u.__dict__ for u in users])
+        users_json = {u.id:[u.username, u.email]  for u in users}
+        print(users_json)
 
 
         return {"success": True,
