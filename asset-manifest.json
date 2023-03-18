@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Parcity/static/css/main.73cfa7be.css",
+    "main.js": "/Parcity/static/js/main.e7c819f2.js",
+    "index.html": "/Parcity/index.html",
+    "main.73cfa7be.css.map": "/Parcity/static/css/main.73cfa7be.css.map",
+    "main.e7c819f2.js.map": "/Parcity/static/js/main.e7c819f2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.73cfa7be.css",
+    "static/js/main.e7c819f2.js"
+  ]
+}
